@@ -2,8 +2,8 @@
 	Filename    : gameconfig_ssbb.bin
 	Date created: Sun May 11 01:28:29 2014
 
-	This adds room for 13,147 lines of gecko codes
-	(0x80580000 - 0x80566528) / 8 = 13,147
+	This adds room for 25,179 lines of gecko codes
+	(0x80597800 - 0x80566528) / 8 = 25,179
 
 	Data is equivalent to:
 		RSBE??:

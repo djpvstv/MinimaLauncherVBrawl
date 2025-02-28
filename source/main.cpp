@@ -38,7 +38,7 @@
 #include "patchcode.h"
 
 /* Boot Variables */
-u32 GameIOS = 0;
+u32 GameIOS = 58;
 u32 vmode_reg = 0;
 GXRModeObj *vmode = NULL;
 
@@ -149,9 +149,9 @@ int main()
 				WPAD_ScanPads();
 				u32 wpad_down = WPAD_ButtonsDown(0) | WPAD_ButtonsDown(1) | WPAD_ButtonsDown(2) | WPAD_ButtonsDown(3);
 				if ((wpad_down & WPAD_BUTTON_LEFT) || (pad_down & PAD_BUTTON_LEFT))
-					sprintf(gamepath, "sd:/codes/ProjectM.gct");
+					sprintf(gamepath, "sd:/ProjectM/%.6s.gct", (char*)Disc_ID);
 				else if ((wpad_down & WPAD_BUTTON_RIGHT) || (pad_down & PAD_BUTTON_RIGHT))
-					sprintf(gamepath, "sd:/codes/Minus.gct");
+					sprintf(gamepath, "sd:/Project+/%.6s.gct", (char*)Disc_ID);
 				else
 					sprintf(gamepath, "sd:/codes/%.6s.gct", (char*)Disc_ID);
 			}

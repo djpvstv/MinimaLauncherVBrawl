@@ -29,7 +29,7 @@
 #include "memory.h"
 #include "gecko.h"
 
-u32 hooktype = 0x06;
+u32 hooktype = 0x01;
 u8 configbytes[2];
 
 extern void patchhook(u32 address, u32 len);
