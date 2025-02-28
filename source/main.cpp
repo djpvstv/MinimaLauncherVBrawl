@@ -107,8 +107,22 @@ int main()
 				gprintf("sd inserted!\n");
 			fatMountSimple("sd", sd);
 			/* gameconfig */
-			if((*(u32*)Disc_ID & 0xFFFFFF00) == 0x52534200)//rsb?01 brawl
-				app_gameconfig_load((char*)Disc_ID, (u8*)gameconfig_ssbb, gameconfig_ssbb_size);
+			if ((*(u32*)Disc_ID & 0xFFFFFF00) == 0x52534200)//rsb?01 brawl
+			{
+				f = fopen("sd:/gameconfig.txt", "rb");
+				if(f != NULL)
+				{
+					fseek(f, 0, SEEK_END);
+					fsize = ftell(f);
+					rewind(f);
+					u8 *gameconfig = (u8*)malloc(fsize);
+					fread(gameconfig, fsize, 1, f);
+					fclose(f);
+					app_gameconfig_load((char*)Disc_ID, gameconfig, fsize);
+					free(gameconfig);
+				} else
+					app_gameconfig_load((char*)Disc_ID, (u8*)gameconfig_ssbb, gameconfig_ssbb_size);
+			}
 			else if(*(u32*)Disc_ID == 0x53554B45)//suke01 kirby
 				app_gameconfig_load((char*)Disc_ID, (u8*)gameconfig_kirby, gameconfig_kirby_size);			
 			else

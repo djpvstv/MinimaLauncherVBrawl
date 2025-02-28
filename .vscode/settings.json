@@ -1,0 +1,7 @@
+{
+    "makefile.makePath": "C:\\Program Files\\CMake\\bin\\cmake.exe",
+    "terminal.integrated.env.windows": {
+        "DEVKITPPC": "C:\\devkitPro\\devkitPPC",
+        "PATH": "C:\\msys64\\usr\\bin;C:\\devkitPro\\devkitPPC\\bin;C:\\devkitPro\\msys2\\usr\bin;C:\\devkitPro\tools\\bin;C:\\MinGW\\bin\\;${env:PATH}"
+    }
+}
