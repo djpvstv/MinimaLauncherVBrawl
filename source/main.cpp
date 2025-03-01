@@ -152,8 +152,12 @@ int main()
 					sprintf(gamepath, "sd:/ProjectM/%.6s.gct", (char*)Disc_ID);
 				else if ((wpad_down & WPAD_BUTTON_RIGHT) || (pad_down & PAD_BUTTON_RIGHT))
 					sprintf(gamepath, "sd:/Project+/%.6s.gct", (char*)Disc_ID);
-				else
+				else if ((wpad_down & WPAD_BUTTON_UP) || (pad_down & PAD_BUTTON_UP))
 					sprintf(gamepath, "sd:/codes/%.6s.gct", (char*)Disc_ID);
+				else if ((wpad_down & WPAD_BUTTON_DOWN) || (pad_down & PAD_BUTTON_DOWN))
+					sprintf(gamepath, "sd:/DebugMode+/%.6s.gct", (char*)Disc_ID);
+				else
+					sprintf(gamepath, "sd:/ComboMode+/%.6s.gct", (char*)Disc_ID);
 			}
 			else
 			{
